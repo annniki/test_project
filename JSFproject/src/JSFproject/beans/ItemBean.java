@@ -111,9 +111,9 @@ public class ItemBean {
 			//Ищем запись в БД с таким же именем (так как поле item_name в таблице уникально)
 			Criteria query = session.createCriteria(Item.class, "name = '" + item.getName() + "'");
 			//Если запись нашлась
-			if (query.list().size() > 0)
+			if (item.getId() == 0 && query.list().size() > 0)
 			{
-				//ППолучаем найденную сущность-запись
+				//Получаем найденную сущность-запись
 				Item exist_item = (Item) query.list().get(0);
 				//Увеличиваем кол-во на введеное в форме значение
 				exist_item.setAmount(exist_item.getAmount() + item.getAmount());
