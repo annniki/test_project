@@ -14,6 +14,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.service.ServiceRegistry;
 
 import JSFproject.model.Item;
@@ -109,7 +110,7 @@ public class ItemBean {
 		try
 		{			
 			//Ищем запись в БД с таким же именем (так как поле item_name в таблице уникально)
-			Criteria query = session.createCriteria(Item.class, "name = '" + item.getName() + "'");
+			Criteria query = session.createCriteria(Item.class).add(Restrictions.eq("name",item.getName()));
 			//Если запись нашлась
 			if (item.getId() == 0 && query.list().size() > 0)
 			{
