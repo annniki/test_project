@@ -13,7 +13,7 @@
 * PrimeFaces 6.0
 * Hibernate 4.3
 * БД PostgeSQL 9.3
-* Сервер Topcat 8.5
+* Сервер Tomcat 8.5
 
 Все используемые библиотеки (.jar) хранятся в папке **Libraries**
 
