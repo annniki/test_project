@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>  
+  		<title>Добавить/изменить покупку</title>
+    </h:head>  
+      
+    <h:body>
+    	<h:outputLabel id="txt" value="#{itemBean.txt}"></h:outputLabel>
+		<h:form>
+			<div>
+				<h:outputLabel value = "Наименование"></h:outputLabel>
+				<p:inputText value = "#{itemBean.item.name}"></p:inputText>
+			</div>
+			<div>
+				<h:outputLabel value = "Количество"></h:outputLabel>
+				<p:inputNumber value = "#{itemBean.item.amount}"></p:inputNumber>
+			</div>
+			<div>
+				<p:commandButton value = "Сохранить" update="txt" action="viewItemList" actionListener="#{itemBean.saveItem}"></p:commandButton>
+				<p:commandButton value = "Отменить" action="viewItemList"/>
+			</div>
+		</h:form>
+	</h:body>
+</html>
