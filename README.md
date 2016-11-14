@@ -1,5 +1,6 @@
 ### Описание приложения
 Простое приложение для составления списка покупок.
+
 Функциональность:
 * Добавление позиций с указанием наименования и количества
 * Изменение текущих позиций (наименование и количество)
@@ -24,11 +25,11 @@ Backup базы данных (база данных + данные): **backup_ni
 ### Доп.коментарии
 Для работы приложения необходимо изменить файл **/JSFproject/src/hibernate.cfg.xml** для подключения к БД.
 Строки:
-```
-  <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-	<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+```XML
+<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
 
-	<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/ann_app</property>
-	<property name="hibernate.connection.username">postgres</property>
-	<property name="hibernate.connection.password">Qwerty123</property>
+<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/ann_app</property>
+<property name="hibernate.connection.username">postgres</property>
+<property name="hibernate.connection.password">Qwerty123</property>
 ```
